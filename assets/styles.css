@@ -200,7 +200,7 @@ p, h1, h2, h3, dl, dd, figure { margin: 0; }
   .front__facts div:first-child { padding-left: 0; border-left: 0; }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .front { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto auto 1fr; grid-template-areas: "head list" "media list" "facts list"; column-gap: clamp(40px, 5vw, 80px); }
   .front__head, .front__media, .front__facts { margin: 0 0 0 calc(var(--bleed) * -1); padding-left: var(--bleed); padding-right: 40px; background: var(--deep); --focus: var(--cream); }
   .front__head, .front__media { box-shadow: 0 2px 0 var(--deep); } /* zakryje subpixelovú škáru medzi bunkami panela */
@@ -217,7 +217,7 @@ p, h1, h2, h3, dl, dd, figure { margin: 0; }
   .front__facts .open { color: var(--cream-2); }
   .front__facts .open.is-open { color: #CFE3C4; }
   .front__list { padding-top: 48px; padding-bottom: 40px; }
-  .rows__cols, .row { grid-template-columns: 96px minmax(0, 1fr) 72px 104px 92px; }
+  .rows__cols, .row { grid-template-columns: 80px minmax(0, 1fr) 64px 92px 88px; column-gap: 16px; }
 }
 
 /* ---------- salón ---------- */
