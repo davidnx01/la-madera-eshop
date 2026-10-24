@@ -95,7 +95,7 @@
 
     <div class="front__head">
       <h1 class="front__h">Krémy a&nbsp;oleje na&nbsp;telo a&nbsp;pleť</h1>
-      <p class="front__lead">E-shop salónu maderoterapie La&nbsp;Madera v&nbsp;Bratislave – Rači. Nákup ti pošleme Packetou alebo si ho vyzdvihneš v&nbsp;salóne.</p>
+      <p class="front__lead">E-shop salónu maderoterapie La&nbsp;Madera v&nbsp;Bratislave&nbsp;– Rači.</p>
     </div>
 
     <section class="front__list" id="produkty" aria-labelledby="produkty-h">
@@ -131,13 +131,13 @@
           <div class="row__meta"><p class="row__vol"><span class="sr">Objem: </span>30&nbsp;ml</p><p class="row__unit"><span class="sr">Cena za 100 ml: </span>99,67&nbsp;€<span class="row__per"> / 100&nbsp;ml</span></p></div>
           <div class="row__buy"><p class="row__price"><span class="sr">Cena: </span>29,90&nbsp;€</p><p class="row__stock">Skladom</p></div>
         </li>
-        <li class="row" data-cat="sady" data-product="sada-ritual-doma">
+        <li class="row row--set" data-cat="sady" data-product="sada-ritual-doma">
           <div class="row__img"><img src="assets/img/foto-produktu.svg" alt="" width="240" height="240"></div>
           <div class="row__main">
             <h3 class="row__name"><a class="row__link" href="/produkt/sada-ritual-doma">Sada Rituál doma</a></h3>
             <p class="row__type">Telový krém 200&nbsp;ml a&nbsp;masážny telový olej 100&nbsp;ml</p>
           </div>
-          <div class="row__meta"><p class="row__vol"><span class="sr">Obsah: </span>2&nbsp;produkty</p></div>
+          <div class="row__meta"><p class="row__vol"><span aria-hidden="true">–</span><span class="sr">Objem: pozri obsah sady</span></p><p class="row__unit"><span aria-hidden="true">–</span><span class="sr">Cena za 100 ml sa pri sade neuvádza</span></p></div>
           <div class="row__buy"><p class="row__price"><span class="sr">Cena: </span>39,90&nbsp;€</p><p class="row__stock">Skladom</p></div>
         </li>
         <li class="row" data-cat="telo" data-product="masazny-olej">
@@ -146,7 +146,7 @@
             <h3 class="row__name"><a class="row__link" href="/produkt/masazny-olej">Masážny telový olej</a></h3>
             <p class="row__type">Na masáž celého tela</p>
           </div>
-          <div class="row__meta"><p class="row__vol"><span class="sr">Objem: </span>100&nbsp;ml</p></div>
+          <div class="row__meta"><p class="row__vol"><span class="sr">Objem: </span>100&nbsp;ml</p><p class="row__unit"><span class="sr">Cena za 100 ml: </span>19,90&nbsp;€<span class="row__per"> / 100&nbsp;ml</span></p></div>
           <div class="row__buy"><p class="row__price"><span class="sr">Cena: </span>19,90&nbsp;€</p><p class="row__stock">Skladom</p></div>
         </li>
         <li class="row" data-cat="tvar" data-product="pletovy-krem">
@@ -173,15 +173,15 @@
     <figure class="front__media">
       <img src="https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-1024x571.webp"
            srcset="https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-768x428.webp 768w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-1024x571.webp 1024w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-1536x856.webp 1536w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2.webp 1920w"
-           sizes="(min-width: 1200px) 40vw, 100vw"
+           sizes="(min-width: 1200px) 30vw, 100vw"
            alt="Maderoterapia v salóne La Madera: terapeutka pracuje drevenou bankou, vedľa ležia drevené valčeky" width="1024" height="571">
     </figure>
 
-    <dl class="front__facts" aria-label="Nákup v skratke" data-note="Doprava a platby podľa štandardu platformy (Packeta, osobný odber zadarmo, Stripe, dobierka podľa rešerše) – potvrdiť s klientkou.">
+    <dl class="front__facts" aria-label="Nákup v skratke" data-note="Doprava a platby podľa štandardu platformy (Packeta, osobný odber zadarmo, Stripe, dobierka podľa rešerše) – potvrdiť s klientkou. Výnimka pre zapečatenú kozmetiku je len v sekcii Doprava; overiť, ktoré produkty majú ochranný obal.">
       <div><dt>Doručenie</dt><dd>Packetou na výdajné miesto alebo do <span class="nw">Z-BOXu</span></dd></div>
       <div><dt>Osobný odber</dt><dd>Zadarmo v&nbsp;salóne v&nbsp;Rači<span class="open" data-open-status></span></dd></div>
       <div><dt>Platba</dt><dd>Kartou alebo na dobierku</dd></div>
-      <div><dt>Vrátenie</dt><dd>Do 14&nbsp;dní, ak neporušíš ochranný obal</dd></div>
+      <div><dt>Vrátenie</dt><dd>Do 14&nbsp;dní bez udania dôvodu</dd></div>
     </dl>
 
   </div>
@@ -208,7 +208,7 @@
         <div class="salon__visit">
           <dl class="visit" data-note="Hodiny z la-madera.sk (10/2026); v sviatky predpokladáme zatvorené – potvrdiť. V Next.js pôjdu hodiny aj výnimky z administrácie.">
             <div><dt>Adresa</dt><dd>Námestie Andreja Hlinku&nbsp;1<br><span class="nw">831 06</span> Bratislava – Rača</dd></div>
-            <div><dt>Otvorené</dt><dd>Pondelok – piatok <span class="nw">8:30 – 21:00</span><br>Sobota po dohode, nedeľa zatvorené<span class="open" data-open-status></span></dd></div>
+            <div><dt>Otvorené</dt><dd>Pondelok–piatok <span class="nw">8:30–21:00</span><br>Sobota po dohode, nedeľa zatvorené<span class="open" data-open-status></span></dd></div>
             <div><dt>Kontakt</dt><dd><a class="link nw" href="tel:+421902120150">+421&nbsp;902&nbsp;120&nbsp;150</a><br><a class="link nw" href="mailto:info@la-madera.sk">info@la-madera.sk</a></dd></div>
           </dl>
           <a class="btn btn--green" href="https://services.bookio.com/la-madera/widget?lang=sk" rel="noopener" target="_blank">Rezervuj si termín<span class="sr"> (otvorí sa v novom okne)</span></a>
@@ -224,12 +224,12 @@
         <h2 class="h2" id="nakup-h">Doprava, platba a&nbsp;vrátenie</h2>
         <p class="muted">Presnú sumu aj s&nbsp;dopravou uvidíš v&nbsp;košíku ešte pred odoslaním objednávky. Nemusíš sa registrovať.</p>
       </div>
-      <dl class="terms" data-note="Spôsoby dopravy a platby, ceny dopravy a lehoty potvrdiť s klientkou; ceny dopravy doplní administrácia.">
+      <dl class="terms" data-note="Spôsoby dopravy a platby, ceny dopravy a lehoty potvrdiť s klientkou; ceny dopravy doplní administrácia. Reklamáciu osobne v salóne a znenie o ochrannom obale overiť s právnikom.">
         <div><dt>Doručenie</dt><dd>Packeta – výdajné miesto alebo <span class="nw">Z-BOX</span> po celom Slovensku. Cenu dopravy uvidíš v&nbsp;košíku.</dd><dd class="terms__a"><a class="arrow" href="/doprava-a-platba">Doprava a&nbsp;platba</a></dd></div>
-        <div><dt>Osobný odber</dt><dd>Zadarmo v&nbsp;salóne na Námestí Andreja Hlinku&nbsp;1, v&nbsp;pracovné dni <span class="nw">8:30 – 21:00</span>. Dáme ti vedieť, keď bude nákup pripravený.</dd><dd class="terms__a"></dd></div>
+        <div><dt>Osobný odber</dt><dd>Zadarmo v&nbsp;salóne na Námestí Andreja Hlinku&nbsp;1, v&nbsp;pracovné dni <span class="nw">8:30–21:00</span>. Dáme ti vedieť, keď bude nákup pripravený.</dd><dd class="terms__a"></dd></div>
         <div><dt>Platba</dt><dd>Kartou na zabezpečenej platobnej stránke Stripe alebo na dobierku pri prevzatí.</dd><dd class="terms__a"></dd></div>
         <div><dt>Vrátenie</dt><dd>Do 14&nbsp;dní od prevzatia môžeš od zmluvy odstúpiť bez udania dôvodu. Kozmetiku v&nbsp;ochrannom obale vrátiš, ak ochranný obal neporušíš.</dd><dd class="terms__a"><a class="arrow" href="/vratenie-tovaru">Vrátenie tovaru</a></dd></div>
-        <div><dt>Reklamácia</dt><dd>Reklamáciu podáš online formulárom. Vybavíme ju najneskôr do 30&nbsp;dní.</dd><dd class="terms__a"><a class="arrow" href="/reklamovat">Reklamovať tovar</a></dd></div>
+        <div><dt>Reklamácia</dt><dd>Reklamáciu podáš online formulárom alebo osobne v&nbsp;salóne. Vybavíme ju najneskôr do 30&nbsp;dní.</dd><dd class="terms__a"><a class="arrow" href="/reklamovat">Reklamovať tovar</a></dd></div>
       </dl>
     </div>
   </section>

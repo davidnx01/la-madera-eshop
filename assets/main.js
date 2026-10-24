@@ -121,7 +121,12 @@
       focusHeading(listH);
     });
   });
-  window.addEventListener('popstate', function () { filter(fromUrl(), true); });
+  window.addEventListener('popstate', function () {
+    filter(fromUrl(), true);
+    /* návrat na stav bez kotvy: fokus nesmie ostať na nadpise mimo obrazovky */
+    var a = document.activeElement;
+    if (!location.hash && a && a.getAttribute('tabindex') === '-1') a.blur();
+  });
   filter(fromUrl(), false);
 
   /* živý stav salóna pre osobný odber (Europe/Bratislava): po – pi 8:30 – 21:00, sobota po dohode, nedeľa a sviatky zatvorené.
