@@ -4,262 +4,512 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>La Madera – krémy a oleje na telo a pleť</title>
-<meta name="description" content="E-shop salónu maderoterapie La Madera v Bratislave – Rači: krémy, oleje a sérá na telo a pleť. Doručenie Packetou alebo osobný odber v salóne.">
-<meta name="theme-color" content="#FCFBF9">
+<title>La Madera – e-shop salónu | krémy, oleje a sérá na telo a pleť</title>
+<meta name="description" content="E-shop salónu maderoterapie La Madera v Bratislave – Rači: krémy, oleje a sérá na telo a pleť. Doručenie Packetou alebo osobný odber v salóne zadarmo.">
+<meta name="theme-color" content="#22381F">
 <link rel="icon" href="https://la-madera.sk/wp-content/uploads/2026/05/la-madera-favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Gelasio:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Gelasio:wght@500;600&display=swap">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <!--
-  Úvodná stránka e-shopu La Madera (Darwon, návrh 2, 10/2026). Statické HTML, CSS a JS, nič sa nikam neodosiela.
+  Úvodná stránka e-shopu La Madera (Darwon, návrh 3, 10/2026). Statické HTML, CSS a JS, nič sa nikam neodosiela.
   Pri preklopení do Next.js (darwon-storefront, apps/lamadera) pôjde z administrácie:
-  - produkty v cenníku: [data-product] = slug, [data-cat] = kategória; názov, popis, objem, jednotková cena, cena, dostupnosť, fotka
-  - kontakty, otváracie hodiny (aj sviatky a výnimky), sociálne siete a údaje predajcu v pätičke: nastavenia obchodu
-  - texty a fotky úvodu a salónu: texts.ts (Texty a fotky)
-  Detaily produktov (/produkt/…), košík a právne stránky v tomto návrhu nie sú; odkazy vedú na 404.html.
+  - produkty (karty, karusel, promo dlaždice, návrhy vo vyhľadávaní): [data-product] = slug; názov, popis, objem, cena, jednotková cena, dostupnosť, fotka
+  - kategórie a ich odkazy: katalóg; košík: useCart (počet a suma v hlavičke, potvrdenie po pridaní)
+  - kontakty, otváracie hodiny (aj sviatky), sociálne siete, údaje predajcu: nastavenia obchodu
+  - texty a fotky banneru, dlaždíc, ošetrení a salónu: texts.ts (Texty a fotky)
+  Detaily produktov, kategórie, košík a právne stránky v tomto návrhu nie sú; odkazy vedú na 404.html.
   [data-note] = neoverený údaj; pred spustením naostro ho musí potvrdiť klientka.
 -->
 <body>
-<a class="skip" href="#produkty">Preskočiť na produkty</a>
+<a class="skip" href="#obsah">Preskočiť na obsah</a>
 
-<header class="top" data-page>
-  <div class="wrap top__in">
-    <a class="logo" href="/"><img src="https://la-madera.sk/wp-content/uploads/2026/05/la-madera-logo-1.svg" alt="La Madera – úvod e-shopu" width="380" height="70" data-note="Logo zo servera la-madera.sk; pred spustením prevziať do knižnice médií."></a>
-    <nav class="top__nav" aria-label="Hlavná navigácia">
-      <a href="?kategoria=telo#produkty" data-cat-link="telo">Telo</a>
-      <a href="?kategoria=tvar#produkty" data-cat-link="tvar">Tvár</a>
-      <a href="?kategoria=sady#produkty" data-cat-link="sady">Sady</a>
-      <a href="#salon" data-jump>Salón</a>
-    </nav>
-    <div class="top__tools">
-      <a class="top__phone" href="tel:+421902120150">+421&nbsp;902&nbsp;120&nbsp;150</a>
-      <a class="ico ico--phone" href="tel:+421902120150" aria-label="Zavolať do salónu, +421 902 120 150">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4.5-2 1.3a10.5 10.5 0 0 0 5.7 5.7l1.3-2 4.5 1.5v3a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 5 5.1 1.5 1.5 0 0 1 6.5 3.5z"/></svg>
-      </a>
-      <button class="ico" type="button" aria-controls="hladat" aria-expanded="false" data-open="hladat">
+<!-- HORNÁ LIŠTA: výhody nákupu a kontakt -->
+<aside class="topbar" aria-label="Výhody nákupu a kontakt" data-page>
+  <div class="wrap topbar__in">
+    <ul class="topbar__usp" data-note="Doprava a platby podľa štandardu platformy – potvrdiť s klientkou.">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg>Doručenie Packetou po celom Slovensku</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20H4z"/><path d="M9.5 20v-5.5h5V20"/></svg>Osobný odber v&nbsp;salóne zadarmo</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg>Platba kartou aj na dobierku</li>
+    </ul>
+    <p class="topbar__contact">
+      <span class="topbar__open" data-open-status></span>
+      <a href="tel:+421902120150"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4.5-2 1.3a10.5 10.5 0 0 0 5.7 5.7l1.3-2 4.5 1.5v3a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 5 5.1 1.5 1.5 0 0 1 6.5 3.5z"/></svg>+421&nbsp;902&nbsp;120&nbsp;150</a>
+      <a href="https://services.bookio.com/la-madera/widget?lang=sk" rel="noopener" target="_blank">Rezervovať ošetrenie<span class="sr"> (otvorí sa v novom okne)</span></a>
+    </p>
+  </div>
+</aside>
+
+<!-- HLAVIČKA: logo, vyhľadávanie s návrhmi, účet, košík so sumou, navigácia s menu produktov -->
+<header class="hdr" data-page>
+  <div class="wrap hdr__main">
+    <button class="ico hdr__burger" type="button" aria-controls="menu" aria-expanded="false" data-open="menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"/></svg>
+      <span class="sr">Menu</span>
+    </button>
+    <a class="logo" href="/"><img src="https://la-madera.sk/wp-content/uploads/2026/05/la-madera-logo-1.svg" alt="La Madera – úvod e-shopu" width="380" height="70"></a>
+
+    <form class="search" action="/hladat" method="get" role="search" data-search>
+      <label class="sr" for="q">Hľadať v e-shope</label>
+      <div class="search__box">
+        <svg class="search__ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+        <input id="q" name="q" type="search" placeholder="Hľadať krémy, oleje, sérá…" autocomplete="off" enterkeyhint="search"
+               role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="q-list">
+        <button class="search__btn" type="submit">Hľadať</button>
+      </div>
+      <ul class="suggest" id="q-list" role="listbox" aria-label="Návrhy" hidden></ul>
+      <p class="sr" role="status" data-suggest-status></p>
+    </form>
+
+    <div class="hdr__actions">
+      <button class="ico hdr__search-ico" type="button" aria-controls="hladat" aria-expanded="false" data-open="hladat">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
         <span class="sr">Hľadať</span>
       </button>
-      <a class="ico" href="/kosik" aria-label="Košík, prázdny" data-cart>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 8h15l-1.3 12.5H5.8z"/><path d="M8.5 8V6.5a3.5 3.5 0 0 1 7 0V8"/></svg>
-        <span class="ico__count" data-cart-count hidden>0</span>
+      <a class="act act--account" href="/ucet" data-note="Zákaznícke účty sú v platforme voliteľné – spýtať sa klientky.">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20.5c1.4-3.6 4.4-5.5 8-5.5s6.6 1.9 8 5.5"/></svg>
+        <span class="act__label">Môj účet</span>
       </a>
-      <button class="ico ico--menu" type="button" aria-controls="menu" aria-expanded="false" data-open="menu">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.5h17M3.5 12h17M3.5 16.5h17"/></svg>
-        <span class="sr">Menu</span>
-      </button>
+      <a class="act act--cart" href="/kosik" data-cart-link aria-label="Košík 0,00 €, prázdny">
+        <span class="act__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 8h15l-1.3 12.5H5.8z"/><path d="M8.5 8V6.5a3.5 3.5 0 0 1 7 0V8"/></svg>
+          <span class="act__count" data-cart-count hidden>0</span>
+        </span>
+        <span class="act__label"><span>Košík</span> <strong class="num" data-cart-sum>0,00&nbsp;€</strong></span>
+      </a>
     </div>
   </div>
+
+  <nav class="nav" aria-label="Hlavná navigácia">
+    <div class="wrap nav__in">
+      <ul class="nav__list">
+        <li>
+          <button class="nav__mega" type="button" aria-expanded="false" aria-controls="mega" data-mega>
+            Produkty
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </li>
+        <li><a href="/telo">Telo</a></li>
+        <li><a href="/tvar">Tvár</a></li>
+        <li><a href="/sady">Sady</a></li>
+        <li><a href="#osetrenia">Ošetrenia v&nbsp;salóne</a></li>
+        <li><a href="#salon">O&nbsp;salóne</a></li>
+        <li><a href="/kontakt">Kontakt</a></li>
+      </ul>
+      <p class="nav__note">Pomôžeme ti s&nbsp;výberom: <a href="tel:+421902120150">+421&nbsp;902&nbsp;120&nbsp;150</a></p>
+    </div>
+
+    <div class="mega" id="mega" hidden>
+      <div class="wrap mega__in">
+        <div class="mega__col">
+          <p class="mega__h"><a href="/telo">Telo</a></p>
+          <ul>
+            <li><a href="/produkt/telovy-krem">Telový krém</a></li>
+            <li><a href="/produkt/masazny-olej">Masážny telový olej</a></li>
+            <li><a href="/produkt/telovy-peeling">Telový peeling</a></li>
+          </ul>
+        </div>
+        <div class="mega__col">
+          <p class="mega__h"><a href="/tvar">Tvár</a></p>
+          <ul>
+            <li><a href="/produkt/tvarove-serum">Tvárové sérum</a></li>
+            <li><a href="/produkt/pletovy-krem">Pleťový krém</a></li>
+          </ul>
+        </div>
+        <div class="mega__col">
+          <p class="mega__h"><a href="/sady">Sady</a></p>
+          <ul>
+            <li><a href="/produkt/sada-ritual-doma">Sada Rituál doma</a></li>
+          </ul>
+          <p class="mega__all"><a class="arrow" href="/produkty">Všetky produkty</a></p>
+        </div>
+        <a class="mega__promo" href="/produkt/sada-ritual-doma">
+          <img src="assets/img/sada-ritual-doma.svg" alt="" width="476" height="476" loading="lazy">
+          <span class="mega__promo-txt"><span class="mega__promo-k">Sada</span><strong>Rituál doma</strong><span class="num">39,90&nbsp;€</span></span>
+        </a>
+      </div>
+    </div>
+  </nav>
 </header>
 
+<!-- VYHĽADÁVANIE NA MOBILE: viditeľné pole pod hlavičkou (neprilepené) -->
+<div class="msearch-bar" data-page>
+  <div class="wrap">
+    <button class="msbtn" type="button" aria-controls="hladat" aria-expanded="false" data-open="hladat">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+      <span>Hľadať krémy, oleje, sérá…</span>
+    </button>
+  </div>
+</div>
+
+<!-- MOBILNÉ MENU -->
 <div class="sheet" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
-  <div class="wrap sheet__bar">
-    <span class="sheet__title">Menu</span>
+  <div class="sheet__bar">
+    <a class="logo" href="/"><img src="https://la-madera.sk/wp-content/uploads/2026/05/la-madera-logo-1.svg" alt="La Madera – úvod e-shopu" width="380" height="70"></a>
     <button class="ico" type="button" data-close>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
       <span class="sr">Zavrieť menu</span>
     </button>
   </div>
-  <nav class="wrap sheet__nav" aria-label="Mobilná navigácia">
-    <a href="?kategoria=all#produkty" data-cat-link="all">Všetky produkty</a>
-    <a href="?kategoria=telo#produkty" data-cat-link="telo">Telo</a>
-    <a href="?kategoria=tvar#produkty" data-cat-link="tvar">Tvár</a>
-    <a href="?kategoria=sady#produkty" data-cat-link="sady">Sady</a>
-    <a href="#salon" data-jump>Salón La&nbsp;Madera</a>
-    <a href="#nakup" data-jump>Doprava, platba a&nbsp;vrátenie</a>
+  <nav class="sheet__nav" aria-label="Mobilná navigácia">
+    <p class="sheet__h">Produkty</p>
+    <a class="sheet__cat" href="/telo"><img src="assets/img/telovy-krem.svg" alt="" width="408" height="408" loading="lazy"><span>Telo<small>Krémy, oleje a&nbsp;peeling</small></span></a>
+    <a class="sheet__cat" href="/tvar"><img src="assets/img/tvarove-serum.svg" alt="" width="392" height="392" loading="lazy"><span>Tvár<small>Sérum a&nbsp;pleťový krém</small></span></a>
+    <a class="sheet__cat" href="/sady"><img src="assets/img/sada-ritual-doma.svg" alt="" width="476" height="476" loading="lazy"><span>Sady<small>Rituál doma</small></span></a>
+    <a class="sheet__link" href="/produkty">Všetky produkty</a>
+    <a class="sheet__link" href="#osetrenia" data-close>Ošetrenia v&nbsp;salóne</a>
+    <a class="sheet__link" href="#salon" data-close>O&nbsp;salóne</a>
+    <a class="sheet__link" href="/doprava-a-platba">Doprava a&nbsp;platba</a>
+    <a class="sheet__link" href="/kontakt">Kontakt</a>
+    <a class="sheet__link" href="/ucet">Môj účet</a>
   </nav>
-  <p class="wrap sheet__contact">Poradíme ti s&nbsp;výberom: <a class="link nw" href="tel:+421902120150">+421&nbsp;902&nbsp;120&nbsp;150</a></p>
+  <div class="sheet__foot">
+    <p>Pomôžeme ti s&nbsp;výberom</p>
+    <a class="btn btn--outline" href="tel:+421902120150">+421&nbsp;902&nbsp;120&nbsp;150</a>
+  </div>
 </div>
 
+<!-- VYHĽADÁVANIE NA MOBILE: celá obrazovka s návrhmi -->
 <div class="sheet sheet--search" id="hladat" role="dialog" aria-modal="true" aria-label="Hľadať" hidden>
-  <form class="wrap search" action="/hladat" method="get" role="search">
-    <label class="search__label" for="q">Hľadať v&nbsp;e-shope</label>
-    <div class="search__row">
-      <input id="q" name="q" type="search" placeholder="Napr. telový krém" autocomplete="off" enterkeyhint="search">
-      <button class="btn btn--ink" type="submit">Hľadať</button>
+  <form class="msearch" action="/hladat" method="get" role="search" data-search>
+    <div class="msearch__row">
+      <label class="sr" for="qm">Hľadať v e-shope</label>
+      <input id="qm" name="q" type="search" placeholder="Hľadať krémy, oleje, sérá…" autocomplete="off" enterkeyhint="search"
+             role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="qm-list">
+      <button class="btn btn--green" type="submit">Hľadať</button>
+      <button class="ico" type="button" data-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        <span class="sr">Zavrieť vyhľadávanie</span>
+      </button>
     </div>
-    <button class="ico search__close" type="button" data-close>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
-      <span class="sr">Zavrieť vyhľadávanie</span>
-    </button>
+    <ul class="suggest suggest--sheet" id="qm-list" role="listbox" aria-label="Návrhy" hidden></ul>
+    <p class="sr" role="status" data-suggest-status></p>
+    <div class="msearch__hint">
+      <p>Často hľadané</p>
+      <div class="msearch__tags">
+        <a href="/telo">Telo</a><a href="/tvar">Tvár</a><a href="/produkt/masazny-olej">Masážny olej</a><a href="/produkt/sada-ritual-doma">Sada Rituál doma</a>
+      </div>
+    </div>
   </form>
 </div>
 
 <main id="obsah" data-page>
 
-  <!-- VÝKLAD: vľavo zelený panel značky (nadpis, fotka, nákup v skratke), vpravo cenník – produkty sú nad záhybom na každej šírke -->
-  <div class="wrap front">
-
-    <div class="front__head">
-      <h1 class="front__h">Krémy a&nbsp;oleje na&nbsp;telo a&nbsp;pleť</h1>
-      <p class="front__lead">E-shop salónu maderoterapie La&nbsp;Madera v&nbsp;Bratislave&nbsp;– Rači.</p>
-    </div>
-
-    <section class="front__list" id="produkty" aria-labelledby="produkty-h">
-      <div class="list__head">
-        <h2 class="list__h" id="produkty-h">Všetky produkty</h2>
-        <p class="list__note" data-note="Platiteľ DPH nie je overený. „Ceny sú konečné“ platí v oboch prípadoch; „s DPH“ doplniť len pri platiteľovi.">Ceny sú konečné.</p>
-      </div>
-      <div class="tabs" role="group" aria-label="Zobraziť produkty">
-        <button type="button" aria-pressed="true" data-chip="all">Všetky</button>
-        <button type="button" aria-pressed="false" data-chip="telo">Telo</button>
-        <button type="button" aria-pressed="false" data-chip="tvar">Tvár</button>
-        <button type="button" aria-pressed="false" data-chip="sady">Sady</button>
-      </div>
-      <p class="sr" role="status" data-chip-status></p>
-
-      <div class="rows__cols" aria-hidden="true"><span>Produkt</span><span>Objem</span><span>Za 100&nbsp;ml</span><span>Cena</span></div>
-      <ul class="rows" data-note="Produkty, popisy, objemy, ceny, jednotkové ceny, dostupnosť a fotky sú zástupné – nahradia sa produktmi z administrácie. Ak sa budú predávať cudzie značky, nad názov pribudne značka. Pravidlo jednotkovej ceny pri kozmetike overiť u právnika.">
-        <li class="row" data-cat="telo" data-product="telovy-krem">
-          <div class="row__img"><img src="assets/img/foto-produktu.svg" alt="" width="240" height="240"></div>
-          <div class="row__main">
-            <h3 class="row__name"><a class="row__link" href="/produkt/telovy-krem">Telový krém</a></h3>
-            <p class="row__type">Na každodennú starostlivosť o&nbsp;telo</p>
+  <!-- 1. ÚVODNÝ BANNER + 2 PROMO DLAŽDICE -->
+  <section class="hero" aria-label="Úvod">
+    <div class="wrap hero__grid">
+      <div class="banner">
+        <img class="banner__img" src="https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-1536x856.webp"
+             srcset="https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-768x428.webp 768w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-1024x571.webp 1024w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-1536x856.webp 1536w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2.webp 1920w"
+             sizes="(min-width: 1100px) 62vw, 100vw" alt="" width="1536" height="856" fetchpriority="high">
+        <div class="banner__copy">
+          <p class="banner__k">E-shop salónu La&nbsp;Madera</p>
+          <h1 class="banner__h">Krémy a&nbsp;oleje zo&nbsp;salónu v&nbsp;Rači</h1>
+          <p class="banner__p">Starostlivosť o&nbsp;telo a&nbsp;pleť na každý deň – s&nbsp;doručením Packetou alebo osobným odberom v&nbsp;salóne.</p>
+          <div class="banner__cta">
+            <a class="btn btn--light" href="#odporucame">Nakupovať</a>
+            <a class="btn btn--ghost" href="/sady">Pozrieť sady</a>
           </div>
-          <div class="row__meta"><p class="row__vol"><span class="sr">Objem: </span>200&nbsp;ml</p><p class="row__unit"><span class="sr">Cena za 100 ml: </span>12,45&nbsp;€<span class="row__per"> / 100&nbsp;ml</span></p></div>
-          <div class="row__buy"><p class="row__price"><span class="sr">Cena: </span>24,90&nbsp;€</p><p class="row__stock">Skladom</p></div>
-        </li>
-        <li class="row" data-cat="tvar" data-product="tvarove-serum">
-          <div class="row__img"><img src="assets/img/foto-produktu.svg" alt="" width="240" height="240"></div>
-          <div class="row__main">
-            <h3 class="row__name"><a class="row__link" href="/produkt/tvarove-serum">Tvárové sérum</a></h3>
-            <p class="row__type">Ráno aj večer pod krém</p>
-          </div>
-          <div class="row__meta"><p class="row__vol"><span class="sr">Objem: </span>30&nbsp;ml</p><p class="row__unit"><span class="sr">Cena za 100 ml: </span>99,67&nbsp;€<span class="row__per"> / 100&nbsp;ml</span></p></div>
-          <div class="row__buy"><p class="row__price"><span class="sr">Cena: </span>29,90&nbsp;€</p><p class="row__stock">Skladom</p></div>
-        </li>
-        <li class="row row--set" data-cat="sady" data-product="sada-ritual-doma">
-          <div class="row__img"><img src="assets/img/foto-produktu.svg" alt="" width="240" height="240"></div>
-          <div class="row__main">
-            <h3 class="row__name"><a class="row__link" href="/produkt/sada-ritual-doma">Sada Rituál doma</a></h3>
-            <p class="row__type">Telový krém 200&nbsp;ml a&nbsp;masážny telový olej 100&nbsp;ml</p>
-          </div>
-          <div class="row__meta"><p class="row__vol"><span aria-hidden="true">–</span><span class="sr">Objem: pozri obsah sady</span></p><p class="row__unit"><span aria-hidden="true">–</span><span class="sr">Cena za 100 ml sa pri sade neuvádza</span></p></div>
-          <div class="row__buy"><p class="row__price"><span class="sr">Cena: </span>39,90&nbsp;€</p><p class="row__stock">Skladom</p></div>
-        </li>
-        <li class="row" data-cat="telo" data-product="masazny-olej">
-          <div class="row__img"><img src="assets/img/foto-produktu.svg" alt="" width="240" height="240"></div>
-          <div class="row__main">
-            <h3 class="row__name"><a class="row__link" href="/produkt/masazny-olej">Masážny telový olej</a></h3>
-            <p class="row__type">Na masáž celého tela</p>
-          </div>
-          <div class="row__meta"><p class="row__vol"><span class="sr">Objem: </span>100&nbsp;ml</p><p class="row__unit"><span class="sr">Cena za 100 ml: </span>19,90&nbsp;€<span class="row__per"> / 100&nbsp;ml</span></p></div>
-          <div class="row__buy"><p class="row__price"><span class="sr">Cena: </span>19,90&nbsp;€</p><p class="row__stock">Skladom</p></div>
-        </li>
-        <li class="row" data-cat="tvar" data-product="pletovy-krem">
-          <div class="row__img"><img src="assets/img/foto-produktu.svg" alt="" width="240" height="240"></div>
-          <div class="row__main">
-            <h3 class="row__name"><a class="row__link" href="/produkt/pletovy-krem">Pleťový krém</a></h3>
-            <p class="row__type">Ľahký denný krém</p>
-          </div>
-          <div class="row__meta"><p class="row__vol"><span class="sr">Objem: </span>50&nbsp;ml</p><p class="row__unit"><span class="sr">Cena za 100 ml: </span>55,80&nbsp;€<span class="row__per"> / 100&nbsp;ml</span></p></div>
-          <div class="row__buy"><p class="row__price"><span class="sr">Cena: </span>27,90&nbsp;€</p><p class="row__stock">Skladom</p></div>
-        </li>
-        <li class="row" data-cat="telo" data-product="telovy-peeling">
-          <div class="row__img"><img src="assets/img/foto-produktu.svg" alt="" width="240" height="240"></div>
-          <div class="row__main">
-            <h3 class="row__name"><a class="row__link" href="/produkt/telovy-peeling">Telový peeling</a></h3>
-            <p class="row__type">Jemný peeling pred masážou</p>
-          </div>
-          <div class="row__meta"><p class="row__vol"><span class="sr">Objem: </span>200&nbsp;ml</p><p class="row__unit"><span class="sr">Cena za 100 ml: </span>9,45&nbsp;€<span class="row__per"> / 100&nbsp;ml</span></p></div>
-          <div class="row__buy"><p class="row__price"><span class="sr">Cena: </span>18,90&nbsp;€</p><p class="row__stock">Skladom</p></div>
-        </li>
-      </ul>
-    </section>
-
-    <figure class="front__media">
-      <img src="https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-1024x571.webp"
-           srcset="https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-768x428.webp 768w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-1024x571.webp 1024w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2-1536x856.webp 1536w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-03-2-2-2.webp 1920w"
-           sizes="(min-width: 1200px) 30vw, 100vw"
-           alt="Maderoterapia v salóne La Madera: terapeutka pracuje drevenou bankou, vedľa ležia drevené valčeky" width="1024" height="571">
-    </figure>
-
-    <dl class="front__facts" aria-label="Nákup v skratke" data-note="Doprava a platby podľa štandardu platformy (Packeta, osobný odber zadarmo, Stripe, dobierka podľa rešerše) – potvrdiť s klientkou. Výnimka pre zapečatenú kozmetiku je len v sekcii Doprava; overiť, ktoré produkty majú ochranný obal.">
-      <div><dt>Doručenie</dt><dd>Packetou na výdajné miesto alebo do <span class="nw">Z-BOXu</span></dd></div>
-      <div><dt>Osobný odber</dt><dd>Zadarmo v&nbsp;salóne v&nbsp;Rači<span class="open" data-open-status></span></dd></div>
-      <div><dt>Platba</dt><dd>Kartou alebo na dobierku</dd></div>
-      <div><dt>Vrátenie</dt><dd>Do 14&nbsp;dní bez udania dôvodu</dd></div>
-    </dl>
-
-  </div>
-
-  <!-- SALÓN: texty a fotka z la-madera.sk; navštíviť, vyzdvihnúť, rezervovať -->
-  <section class="salon" id="salon" aria-labelledby="salon-h">
-    <div class="wrap">
-      <h2 class="salon__h" id="salon-h">Vznikli sme z&nbsp;vlastnej skúsenosti. Vyrástli sme vďaka vašim výsledkom.</h2>
-      <div class="salon__grid">
-        <figure class="salon__media">
-          <img src="https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-09-2-2-600x600.webp"
-               srcset="https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-09-2-2-600x600.webp 600w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-09-2-2.webp 800w"
-               sizes="(min-width: 1024px) 30vw, 100vw"
-               alt="Ošetrovňa salónu La Madera so zelenými závesmi a masážnym lôžkom" width="600" height="600" loading="lazy">
-        </figure>
-        <div class="salon__story">
-          <p>La Madera vznikla ako salón zameraný na maderoterapiu, pretože to fungovalo. Drevené nástroje, rytmická technika a&nbsp;práca s&nbsp;telom, ktorá prináša výsledky viditeľné už po prvých sedeniach.</p>
-          <dl class="figures" data-note="Čísla z la-madera.sk (10/2026) – pred spustením potvrdiť.">
-            <div><dt>spokojných klientok</dt><dd class="num">800+</dd></div>
-            <div><dt>absolvovaných maderoterapií</dt><dd class="num">5&nbsp;000+</dd></div>
-          </dl>
-          <a class="arrow" href="https://la-madera.sk/sluzby">Služby salónu</a>
-        </div>
-        <div class="salon__visit">
-          <dl class="visit" data-note="Hodiny z la-madera.sk (10/2026); v sviatky predpokladáme zatvorené – potvrdiť. V Next.js pôjdu hodiny aj výnimky z administrácie.">
-            <div><dt>Adresa</dt><dd>Námestie Andreja Hlinku&nbsp;1<br><span class="nw">831 06</span> Bratislava – Rača</dd></div>
-            <div><dt>Otvorené</dt><dd>Pondelok–piatok <span class="nw">8:30–21:00</span><br>Sobota po dohode, nedeľa zatvorené<span class="open" data-open-status></span></dd></div>
-            <div><dt>Kontakt</dt><dd><a class="link nw" href="tel:+421902120150">+421&nbsp;902&nbsp;120&nbsp;150</a><br><a class="link nw" href="mailto:info@la-madera.sk">info@la-madera.sk</a></dd></div>
-          </dl>
-          <a class="btn btn--green" href="https://services.bookio.com/la-madera/widget?lang=sk" rel="noopener" target="_blank">Rezervuj si termín<span class="sr"> (otvorí sa v novom okne)</span></a>
         </div>
       </div>
+
+      <a class="promo promo--deep" href="/produkt/sada-ritual-doma">
+        <span class="promo__txt">
+          <span class="promo__k">Sada</span>
+          <strong class="promo__h">Rituál doma</strong>
+          <span class="promo__p">Telový krém 200&nbsp;ml a&nbsp;masážny olej 100&nbsp;ml v&nbsp;jednom balení</span>
+          <span class="promo__price num">39,90&nbsp;€</span>
+          <span class="promo__more">Pozrieť sadu</span>
+        </span>
+        <img class="promo__img" src="assets/img/sada-ritual-doma.svg" alt="" width="476" height="476">
+      </a>
+      <a class="promo promo--light" href="/produkt/tvarove-serum">
+        <span class="promo__txt">
+          <span class="promo__k">Starostlivosť o&nbsp;pleť</span>
+          <strong class="promo__h">Tvárové sérum</strong>
+          <span class="promo__p">Ráno aj večer pod krém</span>
+          <span class="promo__price num">29,90&nbsp;€</span>
+          <span class="promo__more">Pozrieť produkt</span>
+        </span>
+        <img class="promo__img" src="assets/img/tvarove-serum.svg" alt="" width="392" height="392">
+      </a>
     </div>
   </section>
 
-  <!-- DOPRAVA, PLATBA, VRÁTENIE: ceny dopravy idú z administrácie; doslovné odkazy podľa UX pravidiel §9 -->
-  <section class="buy" id="nakup" aria-labelledby="nakup-h">
-    <div class="wrap buy__grid">
-      <div class="buy__head">
-        <h2 class="h2" id="nakup-h">Doprava, platba a&nbsp;vrátenie</h2>
-        <p class="muted">Presnú sumu aj s&nbsp;dopravou uvidíš v&nbsp;košíku ešte pred odoslaním objednávky. Nemusíš sa registrovať.</p>
+  <!-- 2. VÝHODY NÁKUPU -->
+  <section class="usp" aria-label="Výhody nákupu">
+    <ul class="wrap usp__list" data-note="Doprava, platby a lehoty potvrdiť s klientkou; osobný odber zadarmo a dobierka sú predpoklad.">
+      <li>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 10 16 4l12 6v12l-12 6-12-6z"/><path d="M4 10l12 6 12-6M16 16v12"/></svg>
+        <span><strong>Doručenie Packetou</strong>na výdajné miesto alebo do <span class="nw">Z-BOXu</span></span>
+      </li>
+      <li>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 14 16 5l11 9v13H5z"/><path d="M12.5 27v-8h7v8"/></svg>
+        <span><strong>Osobný odber zadarmo</strong>v&nbsp;salóne na Námestí A.&nbsp;Hlinku</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="8" width="24" height="17" rx="2.5"/><path d="M4 13h24M9 20h6"/></svg>
+        <span><strong>Kartou aj na dobierku</strong>bezpečná platba cez Stripe</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 16a10 10 0 1 0 3-7.1M6 5v6h6"/></svg>
+        <span><strong>14 dní na vrátenie</strong>bez udania dôvodu</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 3. KATEGÓRIE -->
+  <section class="sec cats" aria-labelledby="cats-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <h2 class="sec__h" id="cats-h">Nakupuj podľa kategórie</h2>
+        <a class="arrow" href="/produkty">Všetky produkty</a>
       </div>
-      <dl class="terms" data-note="Spôsoby dopravy a platby, ceny dopravy a lehoty potvrdiť s klientkou; ceny dopravy doplní administrácia. Reklamáciu osobne v salóne a znenie o ochrannom obale overiť s právnikom.">
-        <div><dt>Doručenie</dt><dd>Packeta – výdajné miesto alebo <span class="nw">Z-BOX</span> po celom Slovensku. Cenu dopravy uvidíš v&nbsp;košíku.</dd><dd class="terms__a"><a class="arrow" href="/doprava-a-platba">Doprava a&nbsp;platba</a></dd></div>
-        <div><dt>Osobný odber</dt><dd>Zadarmo v&nbsp;salóne na Námestí Andreja Hlinku&nbsp;1, v&nbsp;pracovné dni <span class="nw">8:30–21:00</span>. Dáme ti vedieť, keď bude nákup pripravený.</dd><dd class="terms__a"></dd></div>
-        <div><dt>Platba</dt><dd>Kartou na zabezpečenej platobnej stránke Stripe alebo na dobierku pri prevzatí.</dd><dd class="terms__a"></dd></div>
-        <div><dt>Vrátenie</dt><dd>Do 14&nbsp;dní od prevzatia môžeš od zmluvy odstúpiť bez udania dôvodu. Kozmetiku v&nbsp;ochrannom obale vrátiš, ak ochranný obal neporušíš.</dd><dd class="terms__a"><a class="arrow" href="/vratenie-tovaru">Vrátenie tovaru</a></dd></div>
-        <div><dt>Reklamácia</dt><dd>Reklamáciu podáš online formulárom alebo osobne v&nbsp;salóne. Vybavíme ju najneskôr do 30&nbsp;dní.</dd><dd class="terms__a"><a class="arrow" href="/reklamovat">Reklamovať tovar</a></dd></div>
-      </dl>
+      <ul class="cats__grid">
+        <li>
+          <a class="cat cat--wood" href="/telo">
+            <span class="cat__imgs cat__imgs--3">
+              <img src="assets/img/masazny-olej.svg" alt="" width="456" height="456" loading="lazy">
+              <img src="assets/img/telovy-krem.svg" alt="" width="408" height="408" loading="lazy">
+              <img src="assets/img/telovy-peeling.svg" alt="" width="408" height="408" loading="lazy">
+            </span>
+            <span class="cat__txt"><strong>Telo</strong><span>Krémy, oleje a&nbsp;peeling</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="cat cat--sage" href="/tvar">
+            <span class="cat__imgs cat__imgs--2">
+              <img src="assets/img/tvarove-serum.svg" alt="" width="392" height="392" loading="lazy">
+              <img src="assets/img/pletovy-krem.svg" alt="" width="320" height="320" loading="lazy">
+            </span>
+            <span class="cat__txt"><strong>Tvár</strong><span>Sérum a&nbsp;pleťový krém</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="cat cat--deep" href="/sady">
+            <span class="cat__imgs cat__imgs--1">
+              <img src="assets/img/sada-ritual-doma.svg" alt="" width="476" height="476" loading="lazy">
+            </span>
+            <span class="cat__txt"><strong>Sady</strong><span>Starostlivosť v&nbsp;jednom balení</span></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. ODPORÚČANÉ PRODUKTY: karusel; produkty bez variantov môžu ísť do košíka priamo (UX pravidlá §2, výnimka) -->
+  <section class="sec picks" id="odporucame" aria-labelledby="picks-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <div>
+          <h2 class="sec__h" id="picks-h">Odporúčame</h2>
+          <p class="sec__sub">Výber zo salónu La&nbsp;Madera</p>
+        </div>
+        <div class="sec__tools">
+          <a class="arrow" href="/produkty">Všetky produkty</a>
+          <div class="carousel__btns">
+            <button class="cbtn" type="button" data-prev aria-controls="picks-track">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg><span class="sr">Predchádzajúce produkty</span>
+            </button>
+            <button class="cbtn" type="button" data-next aria-controls="picks-track">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg><span class="sr">Ďalšie produkty</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <ul class="carousel" id="picks-track" data-track data-note="Produkty, ceny, objemy, jednotkové ceny, dostupnosť a fotky sú zástupné; fotky sú ilustračné, nejde o skutočné balenia. Pravidlo jednotkovej ceny pri kozmetike overiť u právnika.">
+        <li class="card" data-product="telovy-krem" data-name="Telový krém" data-price="24.90" data-img="assets/img/telovy-krem.svg" data-href="/produkt/telovy-krem" data-meta="Telo · 200 ml">
+          <a class="card__img" href="/produkt/telovy-krem" tabindex="-1" aria-hidden="true"><img src="assets/img/telovy-krem.svg" alt="" width="408" height="408" loading="lazy"></a>
+          <div class="card__body">
+            <p class="card__meta">Telo · 200&nbsp;ml</p>
+            <h3 class="card__name"><a href="/produkt/telovy-krem">Telový krém</a></h3>
+            <p class="card__desc">Na každodennú starostlivosť o&nbsp;telo</p>
+            <p class="card__price"><span class="num">24,90&nbsp;€</span><span class="card__unit num">12,45&nbsp;€ / 100&nbsp;ml</span></p>
+            <p class="card__stock">Skladom</p>
+            <button class="btn btn--green card__add" type="button" data-add>Do košíka<span class="sr">: Telový krém</span></button>
+          </div>
+        </li>
+        <li class="card" data-product="tvarove-serum" data-name="Tvárové sérum" data-price="29.90" data-img="assets/img/tvarove-serum.svg" data-href="/produkt/tvarove-serum" data-meta="Tvár · 30 ml">
+          <a class="card__img" href="/produkt/tvarove-serum" tabindex="-1" aria-hidden="true"><img src="assets/img/tvarove-serum.svg" alt="" width="392" height="392" loading="lazy"></a>
+          <div class="card__body">
+            <p class="card__meta">Tvár · 30&nbsp;ml</p>
+            <h3 class="card__name"><a href="/produkt/tvarove-serum">Tvárové sérum</a></h3>
+            <p class="card__desc">Ráno aj večer pod krém</p>
+            <p class="card__price"><span class="num">29,90&nbsp;€</span><span class="card__unit num">99,67&nbsp;€ / 100&nbsp;ml</span></p>
+            <p class="card__stock">Skladom</p>
+            <button class="btn btn--green card__add" type="button" data-add>Do košíka<span class="sr">: Tvárové sérum</span></button>
+          </div>
+        </li>
+        <li class="card" data-product="sada-ritual-doma" data-name="Sada Rituál doma" data-price="39.90" data-img="assets/img/sada-ritual-doma.svg" data-href="/produkt/sada-ritual-doma" data-meta="Sada · 2 produkty">
+          <a class="card__img" href="/produkt/sada-ritual-doma" tabindex="-1" aria-hidden="true"><img src="assets/img/sada-ritual-doma.svg" alt="" width="476" height="476" loading="lazy"><span class="card__badge">Sada</span></a>
+          <div class="card__body">
+            <p class="card__meta">Telový krém 200&nbsp;ml + olej 100&nbsp;ml</p>
+            <h3 class="card__name"><a href="/produkt/sada-ritual-doma">Sada Rituál doma</a></h3>
+            <p class="card__desc">Krém a&nbsp;masážny olej v&nbsp;jednom balení</p>
+            <p class="card__price"><span class="num">39,90&nbsp;€</span></p>
+            <p class="card__stock">Skladom</p>
+            <button class="btn btn--green card__add" type="button" data-add>Do košíka<span class="sr">: Sada Rituál doma</span></button>
+          </div>
+        </li>
+        <li class="card" data-product="masazny-olej" data-name="Masážny telový olej" data-price="19.90" data-img="assets/img/masazny-olej.svg" data-href="/produkt/masazny-olej" data-meta="Telo · 100 ml">
+          <a class="card__img" href="/produkt/masazny-olej" tabindex="-1" aria-hidden="true"><img src="assets/img/masazny-olej.svg" alt="" width="456" height="456" loading="lazy"></a>
+          <div class="card__body">
+            <p class="card__meta">Telo · 100&nbsp;ml</p>
+            <h3 class="card__name"><a href="/produkt/masazny-olej">Masážny telový olej</a></h3>
+            <p class="card__desc">Na masáž celého tela</p>
+            <p class="card__price"><span class="num">19,90&nbsp;€</span><span class="card__unit num">19,90&nbsp;€ / 100&nbsp;ml</span></p>
+            <p class="card__stock">Skladom</p>
+            <button class="btn btn--green card__add" type="button" data-add>Do košíka<span class="sr">: Masážny telový olej</span></button>
+          </div>
+        </li>
+        <li class="card" data-product="pletovy-krem" data-name="Pleťový krém" data-price="27.90" data-img="assets/img/pletovy-krem.svg" data-href="/produkt/pletovy-krem" data-meta="Tvár · 50 ml">
+          <a class="card__img" href="/produkt/pletovy-krem" tabindex="-1" aria-hidden="true"><img src="assets/img/pletovy-krem.svg" alt="" width="320" height="320" loading="lazy"></a>
+          <div class="card__body">
+            <p class="card__meta">Tvár · 50&nbsp;ml</p>
+            <h3 class="card__name"><a href="/produkt/pletovy-krem">Pleťový krém</a></h3>
+            <p class="card__desc">Ľahký denný krém</p>
+            <p class="card__price"><span class="num">27,90&nbsp;€</span><span class="card__unit num">55,80&nbsp;€ / 100&nbsp;ml</span></p>
+            <p class="card__stock">Skladom</p>
+            <button class="btn btn--green card__add" type="button" data-add>Do košíka<span class="sr">: Pleťový krém</span></button>
+          </div>
+        </li>
+        <li class="card" data-product="telovy-peeling" data-name="Telový peeling" data-price="18.90" data-img="assets/img/telovy-peeling.svg" data-href="/produkt/telovy-peeling" data-meta="Telo · 200 ml">
+          <a class="card__img" href="/produkt/telovy-peeling" tabindex="-1" aria-hidden="true"><img src="assets/img/telovy-peeling.svg" alt="" width="408" height="408" loading="lazy"></a>
+          <div class="card__body">
+            <p class="card__meta">Telo · 200&nbsp;ml</p>
+            <h3 class="card__name"><a href="/produkt/telovy-peeling">Telový peeling</a></h3>
+            <p class="card__desc">Jemný peeling pred masážou</p>
+            <p class="card__price"><span class="num">18,90&nbsp;€</span><span class="card__unit num">9,45&nbsp;€ / 100&nbsp;ml</span></p>
+            <p class="card__stock">Skladom</p>
+            <button class="btn btn--green card__add" type="button" data-add>Do košíka<span class="sr">: Telový peeling</span></button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. OŠETRENIA V SALÓNE: skutočné fotky a ceny z la-madera.sk -->
+  <section class="sec treat" id="osetrenia" aria-labelledby="treat-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <div>
+          <h2 class="sec__h" id="treat-h">Ošetrenia v&nbsp;salóne La&nbsp;Madera</h2>
+          <p class="sec__sub">Námestie Andreja Hlinku&nbsp;1, Bratislava&nbsp;– Rača</p>
+        </div>
+        <a class="arrow" href="https://la-madera.sk/sluzby">Všetky služby</a>
+      </div>
+      <ul class="treat__grid" data-note="Názvy, opisy a ceny „od“ z la-madera.sk (10/2026) – pred spustením overiť.">
+        <li class="tcard">
+          <a class="tcard__link" href="https://la-madera.sk/maderoterapia">
+            <span class="tcard__img"><img src="https://la-madera.sk/wp-content/uploads/2026/05/maderoterapia.jpg" alt="Maderoterapia: drevený valček na tele klientky" width="830" height="500" loading="lazy"></span>
+            <span class="tcard__body">
+              <strong class="tcard__h">Maderoterapia</strong>
+              <span class="tcard__p">Masážna technika s&nbsp;anatomicky tvarovanými drevenými nástrojmi.</span>
+              <span class="tcard__price">od <span class="num">25&nbsp;€</span></span>
+            </span>
+          </a>
+        </li>
+        <li class="tcard">
+          <a class="tcard__link" href="https://la-madera.sk/tvarove-masaze">
+            <span class="tcard__img"><img src="https://la-madera.sk/wp-content/uploads/2026/05/tvarove.jpg" alt="Tvárová masáž v salóne La Madera" width="830" height="500" loading="lazy"></span>
+            <span class="tcard__body">
+              <strong class="tcard__h">Tvárové masáže</strong>
+              <span class="tcard__p">Ošetrenia tváre a&nbsp;dekoltu – lifting, hydratácia aj relax.</span>
+              <span class="tcard__price">od <span class="num">25&nbsp;€</span></span>
+            </span>
+          </a>
+        </li>
+        <li class="tcard">
+          <a class="tcard__link" href="https://la-madera.sk/pristrojove-osetrenia">
+            <span class="tcard__img"><img src="https://la-madera.sk/wp-content/uploads/2026/05/pristrojove.jpg" alt="Prístrojové ošetrenie tela v salóne La Madera" width="830" height="500" loading="lazy"></span>
+            <span class="tcard__body">
+              <strong class="tcard__h">Prístrojové ošetrenia</strong>
+              <span class="tcard__p">Neinvazívne tvarovanie postavy a&nbsp;spevnenie pokožky.</span>
+              <span class="tcard__price">od <span class="num">35&nbsp;€</span></span>
+            </span>
+          </a>
+        </li>
+      </ul>
+      <p class="treat__cta"><a class="btn btn--green" href="https://services.bookio.com/la-madera/widget?lang=sk" rel="noopener" target="_blank">Rezervuj si termín<span class="sr"> (otvorí sa v novom okne)</span></a></p>
+    </div>
+  </section>
+
+  <!-- 6. SALÓN: dôvera, osobný odber -->
+  <section class="salon" id="salon" aria-labelledby="salon-h">
+    <div class="wrap salon__grid">
+      <figure class="salon__media">
+        <img src="https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-09-2-2-768x768.webp"
+             srcset="https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-09-2-2-600x600.webp 600w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-09-2-2-768x768.webp 768w, https://la-madera.sk/wp-content/uploads/2026/06/La-Madera-June-26-09-2-2.webp 800w"
+             sizes="(min-width: 1000px) 40vw, 100vw" alt="Ošetrovňa salónu La Madera so zelenými závesmi a masážnym lôžkom" width="768" height="768" loading="lazy">
+      </figure>
+      <div class="salon__copy">
+        <p class="salon__k">Za e-shopom stojí salón v&nbsp;Rači</p>
+        <h2 class="salon__h" id="salon-h">Vznikli sme z&nbsp;vlastnej skúsenosti. Vyrástli sme vďaka vašim výsledkom.</h2>
+        <p class="salon__p">La Madera vznikla ako salón zameraný na maderoterapiu, pretože to fungovalo. Drevené nástroje, rytmická technika a&nbsp;práca s&nbsp;telom, ktorá prináša výsledky viditeľné už po prvých sedeniach.</p>
+        <dl class="stats" data-note="Čísla z la-madera.sk (10/2026) – pred spustením potvrdiť.">
+          <div><dt>spokojných klientok</dt><dd class="num">800+</dd></div>
+          <div><dt>absolvovaných maderoterapií</dt><dd class="num">5&nbsp;000+</dd></div>
+        </dl>
+        <dl class="visit" data-note="Hodiny z la-madera.sk (10/2026); v sviatky predpokladáme zatvorené – potvrdiť.">
+          <div><dt>Adresa</dt><dd>Námestie Andreja Hlinku&nbsp;1, <span class="nw">831 06</span> Bratislava&nbsp;– Rača</dd></div>
+          <div><dt>Otvorené</dt><dd>Pondelok–piatok <span class="nw">8:30–21:00</span>, sobota po dohode<span class="open" data-open-status></span></dd></div>
+        </dl>
+        <div class="salon__cta">
+          <a class="btn btn--green" href="https://services.bookio.com/la-madera/widget?lang=sk" rel="noopener" target="_blank">Rezervuj si termín<span class="sr"> (otvorí sa v novom okne)</span></a>
+          <a class="btn btn--outline" href="https://www.google.com/maps/search/?api=1&amp;query=N%C3%A1mestie%20Andreja%20Hlinku%201%2C%20831%2006%20Bratislava" rel="noopener" target="_blank">Ako sa k&nbsp;nám dostaneš<span class="sr"> (Google Mapy, otvorí sa v novom okne)</span></a>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
 
+<!-- PÄTIČKA: newsletter, odkazy, právne informácie -->
 <footer class="foot" data-page>
   <div class="wrap">
+    <div class="news">
+      <div class="news__txt">
+        <h2 class="news__h">Novinky a&nbsp;akcie e-mailom</h2>
+        <p>Raz za čas ti pošleme novinky z&nbsp;e-shopu a&nbsp;salónu. Odhlásiť sa môžeš kedykoľvek.</p>
+      </div>
+      <form class="news__form" action="/newsletter" method="post" data-news novalidate>
+        <label class="sr" for="news-email">E-mail</label>
+        <input id="news-email" name="email" type="email" placeholder="Tvoj e-mail" autocomplete="email" required>
+        <button class="btn btn--light" type="submit">Prihlásiť sa</button>
+        <p class="news__legal">Prihlásením súhlasíš so spracovaním e-mailu na zasielanie noviniek. <a href="/ochrana-osobnych-udajov">Ochrana osobných údajov</a></p>
+        <p class="news__msg" role="status" data-news-msg></p>
+      </form>
+    </div>
+
     <div class="foot__grid">
       <div class="foot__brand">
-        <a class="logo" href="/"><img src="https://la-madera.sk/wp-content/uploads/2026/05/la-madera-logo-1.svg" alt="La Madera – úvod e-shopu" width="380" height="70" loading="lazy"></a>
-        <p>Námestie Andreja Hlinku&nbsp;1<br><span class="nw">831 06</span> Bratislava – Rača</p>
-        <p><a class="link nw" href="tel:+421902120150">+421&nbsp;902&nbsp;120&nbsp;150</a><br><a class="link nw" href="mailto:info@la-madera.sk">info@la-madera.sk</a></p>
-        <p class="foot__social"><a href="https://www.instagram.com/__la_madera__" rel="noopener" target="_blank">Instagram<span class="sr"> (otvorí sa v novom okne)</span></a> <a href="https://www.facebook.com/p/La-Madera-miluj-%C4%8Do-pre-seba-rob%C3%AD%C5%A1-61559010370004/" rel="noopener" target="_blank">Facebook<span class="sr"> (otvorí sa v novom okne)</span></a></p>
+        <a class="logo logo--light" href="/"><img src="https://la-madera.sk/wp-content/uploads/2026/05/la-madera-logo-1.svg" alt="La Madera – úvod e-shopu" width="380" height="70" loading="lazy"></a>
+        <p>Námestie Andreja Hlinku&nbsp;1<br><span class="nw">831 06</span> Bratislava&nbsp;– Rača</p>
+        <p><a href="tel:+421902120150" class="nw">+421&nbsp;902&nbsp;120&nbsp;150</a><br><a href="mailto:info@la-madera.sk" class="nw">info@la-madera.sk</a></p>
+        <p class="foot__social">
+          <a href="https://www.instagram.com/__la_madera__" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg><span class="sr">Instagram (otvorí sa v novom okne)</span></a>
+          <a href="https://www.facebook.com/p/La-Madera-miluj-%C4%8Do-pre-seba-rob%C3%AD%C5%A1-61559010370004/" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.5V5H14a3.5 3.5 0 0 0-3.5 3.5V11H8v3.5h2.5V21H14v-6.5h2.5L17 11h-3V9a.5.5 0 0 1 .5-.5z"/></svg><span class="sr">Facebook (otvorí sa v novom okne)</span></a>
+        </p>
       </div>
       <div>
         <h2 class="foot__h">E-shop</h2>
         <ul>
-          <li><a href="?kategoria=all#produkty" data-cat-link="all">Všetky produkty</a></li>
-          <li><a href="?kategoria=telo#produkty" data-cat-link="telo">Telo</a></li>
-          <li><a href="?kategoria=tvar#produkty" data-cat-link="tvar">Tvár</a></li>
-          <li><a href="?kategoria=sady#produkty" data-cat-link="sady">Sady</a></li>
+          <li><a href="/produkty">Všetky produkty</a></li>
+          <li><a href="/telo">Telo</a></li>
+          <li><a href="/tvar">Tvár</a></li>
+          <li><a href="/sady">Sady</a></li>
         </ul>
       </div>
       <div>
-        <h2 class="foot__h">Pomoc</h2>
+        <h2 class="foot__h">Nákup</h2>
         <ul>
           <li><a href="/doprava-a-platba">Doprava a&nbsp;platba</a></li>
           <li><a href="/vratenie-tovaru">Vrátenie tovaru</a></li>
           <li><a href="/reklamovat">Reklamovať tovar</a></li>
+          <li><a href="/ucet">Môj účet</a></li>
           <li><a href="/kontakt">Kontakt</a></li>
         </ul>
       </div>
@@ -274,13 +524,42 @@
         </ul>
       </div>
     </div>
-    <div class="foot__legal">
-      <p data-note="Údaje predajcu idú z administrácie (operatorLine). Na la-madera.sk nie sú uvedené – doplniť a overiť v ORSR, FinState a VIES (platiteľ DPH?).">Predávajúci: [obchodné meno], [sídlo], IČO [&nbsp;], DIČ [&nbsp;], zapísaný v&nbsp;[register].</p>
-      <p>Orgán dozoru: Slovenská obchodná inšpekcia, Inšpektorát SOI pre Bratislavský kraj.</p>
-      <p>© 2026 La&nbsp;Madera · Návrh úvodnej stránky e-shopu. Produkty, ceny a&nbsp;fotky produktov sú zástupné; doprava, platby a&nbsp;otváracie hodiny čakajú na potvrdenie salónu.</p>
+
+    <div class="foot__bottom">
+      <ul class="pay" aria-label="Spôsoby platby a dopravy" data-note="Logá platieb a dopravy doplniť z oficiálnych podkladov poskytovateľov (Stripe, Packeta).">
+        <li>Platba kartou</li><li>Dobierka</li><li>Packeta</li><li>Osobný odber</li>
+      </ul>
+      <div class="foot__legal">
+        <p data-note="Údaje predajcu idú z administrácie (operatorLine). Na la-madera.sk nie sú uvedené – doplniť a overiť v ORSR, FinState a VIES (platiteľ DPH?).">Predávajúci: [obchodné meno], [sídlo], IČO [&nbsp;], DIČ [&nbsp;], zapísaný v&nbsp;[register]. Orgán dozoru: Slovenská obchodná inšpekcia, Inšpektorát SOI pre Bratislavský kraj.</p>
+        <p>© 2026 La&nbsp;Madera · Návrh úvodnej stránky e-shopu. Produkty, ceny a&nbsp;ilustračné fotky produktov sú zástupné; doprava, platby a&nbsp;otváracie hodiny čakajú na potvrdenie salónu.</p>
+      </div>
     </div>
   </div>
 </footer>
+
+<!-- POTVRDENIE PRIDANIA DO KOŠÍKA: nezmizne samo (UX pravidlá §4) -->
+<div class="added" role="dialog" aria-modal="false" aria-labelledby="added-h" data-added hidden>
+  <div class="added__head">
+    <p class="added__h" id="added-h"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Pridané do košíka</p>
+    <button class="ico" type="button" data-added-close>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span class="sr">Zavrieť</span>
+    </button>
+  </div>
+  <div class="added__item">
+    <img src="assets/img/telovy-krem.svg" alt="" width="96" height="96" data-added-img>
+    <div>
+      <p class="added__name" data-added-name></p>
+      <p class="added__meta" data-added-meta></p>
+      <p class="added__price num" data-added-price></p>
+    </div>
+  </div>
+  <p class="added__sum">Medzisúčet v&nbsp;košíku <strong class="num" data-added-sum></strong></p>
+  <div class="added__actions">
+    <a class="btn btn--green" href="/kosik">Prejsť do košíka</a>
+    <button class="btn btn--outline" type="button" data-added-close>Pokračovať v&nbsp;nákupe</button>
+  </div>
+</div>
+<p class="sr" role="status" aria-live="polite" data-cart-status></p>
 
 <script src="assets/main.js"></script>
 </body>

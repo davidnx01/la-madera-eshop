@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="56 92 476 476" role="img" aria-label="Ilustračná fotka: sada telový krém a masážny olej">
+<defs>
+  <linearGradient id="frost" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" stop-color="#DDD6CC"/><stop offset=".18" stop-color="#F3EFE9"/><stop offset=".38" stop-color="#FFFFFF"/>
+    <stop offset=".7" stop-color="#F1ECE5"/><stop offset="1" stop-color="#D3CBC0"/>
+  </linearGradient>
+  <linearGradient id="wood" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" stop-color="#9E6C38"/><stop offset=".22" stop-color="#C79458"/><stop offset=".42" stop-color="#DDB07A"/>
+    <stop offset=".75" stop-color="#C38E55"/><stop offset="1" stop-color="#93622F"/>
+  </linearGradient>
+  <linearGradient id="amber" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" stop-color="#5A3212"/><stop offset=".2" stop-color="#8E5420"/><stop offset=".4" stop-color="#B9772F"/>
+    <stop offset=".72" stop-color="#94561F"/><stop offset="1" stop-color="#4E2B10"/>
+  </linearGradient>
+  <linearGradient id="green" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" stop-color="#1B2E18"/><stop offset=".3" stop-color="#2F5627"/><stop offset=".45" stop-color="#3D6A33"/>
+    <stop offset=".75" stop-color="#2A4B23"/><stop offset="1" stop-color="#18291A"/>
+  </linearGradient>
+  <linearGradient id="black" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" stop-color="#141212"/><stop offset=".4" stop-color="#3A3532"/><stop offset="1" stop-color="#121010"/>
+  </linearGradient>
+  <linearGradient id="shine" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<ellipse cx="300" cy="498" rx="210" ry="16" fill="#2B211C" opacity=".2" filter="url(#soft)"/><rect x="108" y="330" width="212" height="160" rx="26" fill="url(#frost)"/><rect x="133.4" y="340" width="14.8" height="132" rx="6" fill="#fff" opacity=".85"/><rect x="146.16" y="362.0" width="135.68" height="92.8" rx="3" fill="#FBF8F2"/><rect x="146.16" y="362.0" width="135.68" height="92.8" rx="3" fill="none" stroke="#1E1B1B" stroke-opacity=".08"/><path transform="translate(207.0 395.4) scale(.5)" d="M0,0 C0,-22 17,-34 17,-34 C17,-34 17,-12 7,-3 C12,-7 19,-10 27,-7 C27,-7 14,5 0,0 Z" fill="#3B6B32"/><text x="214.0" y="419.5" text-anchor="middle" font-family="Georgia, serif" font-size="12.3" letter-spacing="1.6" fill="#1E1B1B">TELOVÝ KRÉM</text><text x="214.0" y="436.2" text-anchor="middle" font-family="Arial, sans-serif" font-size="8.5" letter-spacing="1" fill="#6B5F5B">200 ml</text><rect x="100" y="270" width="228" height="66" rx="10" fill="url(#wood)"/><rect x="100" y="270" width="228" height="23.1" rx="10" fill="url(#shine)" opacity=".35"/><rect x="104" y="331" width="220" height="5" fill="#000" opacity=".12"/><path d="M110 289.8 C168.4 281.9 236.8 297.7 318 287.2" fill="none" stroke="#7A4E24" stroke-opacity=".22" stroke-width="1.6"/><path d="M110 306.3 C168.4 298.4 236.8 314.2 318 303.7" fill="none" stroke="#7A4E24" stroke-opacity=".22" stroke-width="1.6"/><path d="M110 321.5 C168.4 313.6 236.8 329.4 318 318.8" fill="none" stroke="#7A4E24" stroke-opacity=".22" stroke-width="1.6"/><path d="M352 276 Q352 236 392 236 H442 Q482 236 482 276 V472 Q482 490 464 490 H370 Q352 490 352 472 Z" fill="url(#amber)"/><rect x="368.9" y="258" width="10.4" height="204" rx="5" fill="#fff" opacity=".22"/><rect x="370.2" y="322.36" width="93.6" height="111.76" rx="3" fill="#FBF8F2"/><rect x="370.2" y="322.36" width="93.6" height="111.76" rx="3" fill="none" stroke="#1E1B1B" stroke-opacity=".08"/><path transform="translate(410.0 362.6) scale(.5)" d="M0,0 C0,-22 17,-34 17,-34 C17,-34 17,-12 7,-3 C12,-7 19,-10 27,-7 C27,-7 14,5 0,0 Z" fill="#3B6B32"/><text x="417.0" y="391.7" text-anchor="middle" font-family="Georgia, serif" font-size="9.0" letter-spacing="1.6" fill="#1E1B1B">MASÁŽNY OLEJ</text><text x="417.0" y="411.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="7.0" letter-spacing="1" fill="#6B5F5B">100 ml</text><rect x="391.0" y="202" width="52" height="40" rx="5" fill="url(#black)"/><rect x="409.0" y="150" width="16" height="56" rx="3" fill="url(#black)"/><path d="M419.0 154 H369.0 a10 10 0 0 0 -10 10 v7" fill="none" stroke="#1E1A18" stroke-width="13" stroke-linecap="round"/><rect x="395.0" y="140" width="44" height="18" rx="5" fill="url(#black)"/>
+</svg>
