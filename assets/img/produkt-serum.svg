@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Zástupná ilustrácia: fľaštička tvárového séra s kvapkadlom">
+  <ellipse cx="300" cy="486" rx="86" ry="12" fill="#382D2D" opacity=".09"/>
+  <rect x="244" y="290" width="112" height="196" rx="26" fill="#E9DCC8" stroke="#DCD1C7" stroke-width="2"/>
+  <rect x="258" y="350" width="84" height="80" rx="8" fill="#FCFAF6"/>
+  <rect x="272" y="376" width="56" height="5" rx="2.5" fill="#C9BAAA"/>
+  <rect x="280" y="392" width="40" height="4" rx="2" fill="#D8CBBD"/>
+  <rect x="262" y="246" width="76" height="50" rx="10" fill="#B98A5E"/>
+  <rect x="262" y="286" width="76" height="10" rx="5" fill="#A47A51"/>
+  <path d="M280 248c0-40 6-72 20-72s20 32 20 72z" fill="#3B6B32"/>
+</svg>

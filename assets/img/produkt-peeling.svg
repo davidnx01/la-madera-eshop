@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Zástupná ilustrácia: tuba telového peelingu">
+  <ellipse cx="300" cy="488" rx="92" ry="12" fill="#382D2D" opacity=".09"/>
+  <path d="M222 150h156l-14 268H236z" fill="#FCFAF6" stroke="#DCD1C7" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="216" y="132" width="168" height="22" rx="4" fill="#E5D9CC"/>
+  <path d="M230 142h140" stroke="#D3C5B6" stroke-width="2" stroke-dasharray="6 6"/>
+  <rect x="248" y="250" width="104" height="96" rx="10" fill="#EDE2D7"/>
+  <rect x="266" y="282" width="68" height="6" rx="3" fill="#C9BAAA"/>
+  <rect x="276" y="300" width="48" height="5" rx="2.5" fill="#D8CBBD"/>
+  <rect x="242" y="414" width="116" height="74" rx="14" fill="#B98A5E"/>
+  <path d="M256 428h88" stroke="#CFA47A" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+</svg>

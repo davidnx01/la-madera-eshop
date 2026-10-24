@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Zástupná ilustrácia: malý téglik pleťového krému">
+  <ellipse cx="300" cy="472" rx="124" ry="14" fill="#382D2D" opacity=".09"/>
+  <rect x="204" y="336" width="192" height="134" rx="26" fill="#FCFAF6" stroke="#DCD1C7" stroke-width="2"/>
+  <rect x="228" y="378" width="144" height="56" rx="8" fill="#EDE2D7"/>
+  <rect x="254" y="398" width="92" height="5" rx="2.5" fill="#C9BAAA"/>
+  <rect x="270" y="412" width="60" height="4" rx="2" fill="#D8CBBD"/>
+  <rect x="194" y="288" width="212" height="62" rx="16" fill="#3B6B32"/>
+  <path d="M210 302h180" stroke="#5C8A52" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+  <rect x="194" y="340" width="212" height="10" rx="5" fill="#305526"/>
+</svg>

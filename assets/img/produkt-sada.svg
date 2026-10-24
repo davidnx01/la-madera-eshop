@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Zástupná ilustrácia: sada telového krému a masážneho oleja">
+  <ellipse cx="300" cy="482" rx="210" ry="16" fill="#382D2D" opacity=".09"/>
+  <g transform="translate(118 0)">
+    <rect x="226" y="218" width="140" height="262" rx="38" fill="#F3E7D4" stroke="#DCD1C7" stroke-width="2"/>
+    <rect x="248" y="306" width="96" height="92" rx="10" fill="#FCFAF6"/>
+    <rect x="266" y="336" width="60" height="6" rx="3" fill="#C9BAAA"/>
+    <rect x="276" y="354" width="40" height="5" rx="2.5" fill="#D8CBBD"/>
+    <rect x="270" y="186" width="52" height="38" rx="8" fill="#B98A5E"/>
+    <rect x="286" y="134" width="20" height="56" rx="5" fill="#A47A51"/>
+    <path d="M292 140h-50a14 14 0 0 0-14 14v8" fill="none" stroke="#A47A51" stroke-width="16" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(-58 8)">
+    <rect x="168" y="302" width="236" height="166" rx="28" fill="#FCFAF6" stroke="#DCD1C7" stroke-width="2"/>
+    <rect x="196" y="356" width="180" height="66" rx="10" fill="#EDE2D7"/>
+    <rect x="226" y="378" width="120" height="6" rx="3" fill="#C9BAAA"/>
+    <rect x="248" y="394" width="76" height="5" rx="2.5" fill="#D8CBBD"/>
+    <rect x="158" y="250" width="256" height="66" rx="17" fill="#B98A5E"/>
+    <path d="M174 265h224" stroke="#CFA47A" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+    <rect x="158" y="306" width="256" height="10" rx="5" fill="#A47A51"/>
+  </g>
+</svg>
