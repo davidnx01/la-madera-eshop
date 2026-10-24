@@ -66,12 +66,10 @@
       if (started) return;
       started = true;
       hero.classList.add('is-loading');
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          hero.classList.add('is-ready');
-          setTimeout(function () { hero.classList.remove('is-loading'); }, 1400);
-        });
-      });
+      // vynútený prepočet štýlov namiesto requestAnimationFrame: v karte na pozadí rAF nebeží a text by ostal skrytý
+      void hero.offsetWidth;
+      hero.classList.add('is-ready');
+      setTimeout(function () { hero.classList.remove('is-loading'); }, 1400);
     };
     var firstImg = $('img', media[0]);
     if (reduce.matches || firstImg.complete) start();
