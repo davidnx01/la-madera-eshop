@@ -203,6 +203,7 @@ p, h1, h2, h3, dl, dd, figure { margin: 0; }
 @media (min-width: 1024px) {
   .front { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto auto 1fr; grid-template-areas: "head list" "media list" "facts list"; column-gap: clamp(40px, 5vw, 80px); }
   .front__head, .front__media, .front__facts { margin: 0 0 0 calc(var(--bleed) * -1); padding-left: var(--bleed); padding-right: 40px; background: var(--deep); --focus: var(--cream); }
+  .front__head, .front__media { box-shadow: 0 2px 0 var(--deep); } /* zakryje subpixelovú škáru medzi bunkami panela */
   .front__head { padding-top: 56px; padding-bottom: 28px; }
   .front__media { aspect-ratio: auto; padding-bottom: 8px; overflow: visible; }
   .front__media img { aspect-ratio: 4 / 3; height: auto; }
