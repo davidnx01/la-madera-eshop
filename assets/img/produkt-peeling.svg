@@ -1,11 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Zástupná ilustrácia: tuba telového peelingu">
-  <ellipse cx="300" cy="488" rx="92" ry="12" fill="#382D2D" opacity=".09"/>
-  <path d="M222 150h156l-14 268H236z" fill="#FCFAF6" stroke="#DCD1C7" stroke-width="2" stroke-linejoin="round"/>
-  <rect x="216" y="132" width="168" height="22" rx="4" fill="#E5D9CC"/>
-  <path d="M230 142h140" stroke="#D3C5B6" stroke-width="2" stroke-dasharray="6 6"/>
-  <rect x="248" y="250" width="104" height="96" rx="10" fill="#EDE2D7"/>
-  <rect x="266" y="282" width="68" height="6" rx="3" fill="#C9BAAA"/>
-  <rect x="276" y="300" width="48" height="5" rx="2.5" fill="#D8CBBD"/>
-  <rect x="242" y="414" width="116" height="74" rx="14" fill="#B98A5E"/>
-  <path d="M256 428h88" stroke="#CFA47A" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Zástupná ilustrácia: dóza telového peelingu so zeleným viečkom">
+<ellipse cx="300" cy="482" rx="156" ry="12" fill="#1E1B1B" opacity=".07"/><rect x="170" y="338" width="260" height="140" rx="18" fill="#FBF8F3" stroke="#E2D8CB" stroke-width="2"/><rect x="180" y="346" width="10" height="114" rx="5" fill="#fff" opacity=".9"/><rect x="222" y="362" width="156" height="96" rx="3" fill="#FFFDF9" stroke="#E4DACD" stroke-width="1.5"/><path transform="translate(291.0 394.64) scale(.62)" d="M0,0 C0,-22 17,-34 17,-34 C17,-34 17,-12 7,-3 C12,-7 19,-10 27,-7 C27,-7 14,5 0,0 Z" fill="#3B6B32"/><rect x="253.2" y="415.76" width="93.6" height="5" rx="2.5" fill="#CDBFAF"/><rect x="268.8" y="429.2" width="62.400000000000006" height="4" rx="2" fill="#DDD2C5"/><rect x="160" y="290" width="280" height="56" rx="8" fill="#2F5627"/><rect x="160" y="338" width="280" height="8" fill="#22381F" opacity=".5"/>
 </svg>

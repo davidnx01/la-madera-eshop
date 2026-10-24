@@ -1,10 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Zástupná ilustrácia: fľaštička tvárového séra s kvapkadlom">
-  <ellipse cx="300" cy="486" rx="86" ry="12" fill="#382D2D" opacity=".09"/>
-  <rect x="244" y="290" width="112" height="196" rx="26" fill="#E9DCC8" stroke="#DCD1C7" stroke-width="2"/>
-  <rect x="258" y="350" width="84" height="80" rx="8" fill="#FCFAF6"/>
-  <rect x="272" y="376" width="56" height="5" rx="2.5" fill="#C9BAAA"/>
-  <rect x="280" y="392" width="40" height="4" rx="2" fill="#D8CBBD"/>
-  <rect x="262" y="246" width="76" height="50" rx="10" fill="#B98A5E"/>
-  <rect x="262" y="286" width="76" height="10" rx="5" fill="#A47A51"/>
-  <path d="M280 248c0-40 6-72 20-72s20 32 20 72z" fill="#3B6B32"/>
+<ellipse cx="300" cy="482" rx="74" ry="12" fill="#1E1B1B" opacity=".07"/><rect x="250" y="300" width="100" height="178" rx="18" fill="#E8D3AC" stroke="#D5BD92" stroke-width="2"/><rect x="260" y="312" width="10" height="150" rx="5" fill="#F6EAD3" opacity=".8"/><rect x="264" y="352" width="72" height="88" rx="3" fill="#FFFDF9" stroke="#E4DACD" stroke-width="1.5"/><path transform="translate(291.0 381.92) scale(.62)" d="M0,0 C0,-22 17,-34 17,-34 C17,-34 17,-12 7,-3 C12,-7 19,-10 27,-7 C27,-7 14,5 0,0 Z" fill="#3B6B32"/><rect x="278.4" y="401.28" width="43.199999999999996" height="5" rx="2.5" fill="#CDBFAF"/><rect x="285.6" y="413.6" width="28.8" height="4" rx="2" fill="#DDD2C5"/><rect x="262" y="262" width="76" height="44" rx="6" fill="#C99A68"/><path d="M276 277.4 C284.8 270.8 303.8 284.0 324 275.2" fill="none" stroke="#B0804F" stroke-width="2" opacity=".55"/><path d="M282 292.8 C288.6 286.2 311.4 299.4 318 290.6" fill="none" stroke="#B0804F" stroke-width="2" opacity=".45"/><rect x="262" y="300" width="76" height="6" fill="#B58554" opacity=".5"/><rect x="280" y="180" width="40" height="88" rx="20" fill="#2F5627"/>
 </svg>
